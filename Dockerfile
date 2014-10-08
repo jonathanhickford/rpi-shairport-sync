@@ -14,7 +14,7 @@ RUN curl -L get.rvm.io | bash -s stable --rails
 
 RUN chsh -l
 
-RUN source ~/.rvm/scripts/rvm
+RUN ./ ~/.rvm/scripts/rvm
 
 RUN echo ruby -v >/start
 RUN chmod +x /start
