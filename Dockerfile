@@ -1,7 +1,7 @@
 FROM resin/rpi-raspbian:wheezy
 
 RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get -y upgrade
 RUN apt-get install -y --fix-missing git curl zlib1g-dev subversion
 RUN apt-get update
 
