@@ -12,6 +12,8 @@ RUN apt-get install -y autoconf automake libtool bison
 
 RUN curl -L get.rvm.io | bash -s stable --rails
 
+RUN chsh -s /bin/bash
+
 RUN source ~/.rvm/scripts/rvm
 
 RUN echo ruby -v >/start
