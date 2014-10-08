@@ -12,7 +12,7 @@ RUN apt-get install -y autoconf automake libtool bison
 
 RUN curl -L get.rvm.io | bash -s stable --rails
 
-RUN chsh --list-shells
+RUN chsh -l
 
 RUN source ~/.rvm/scripts/rvm
 
