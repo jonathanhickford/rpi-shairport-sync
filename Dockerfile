@@ -1,6 +1,6 @@
 FROM resin/rpi-raspbian:wheezy
 
-RUN apt-get -y install python-software-properties
+#RUN apt-get -y install python-software-properties
 RUN apt-get -y update
  
 # install essentials
