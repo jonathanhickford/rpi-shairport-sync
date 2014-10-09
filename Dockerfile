@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:wheezy
+FROM resin/rpi-buildstep-armv6hf:latest
 
 RUN apt-get update
 RUN apt-get -y upgrade
@@ -12,8 +12,7 @@ RUN apt-get install -y autoconf automake libtool bison
 
 #RUN curl -L get.rvm.io | bash -s stable --rails
 RUN \curl -sSL https://get.rvm.io | bash -s stable 
-RUN /bin/bash /usr/local/rvm/scripts/rvm
-#RUN source /usr/local/rvm/scripts/rvm
+RUN . /usr/local/rvm/scripts/rvm
 RUN rvm install 2.1.0
 
 #RUN ./usr/local/rvm/scripts/rvm
