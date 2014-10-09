@@ -12,8 +12,8 @@ RUN apt-get install -y autoconf automake libtool bison
 
 #RUN curl -L get.rvm.io | bash -s stable --rails
 RUN \curl -sSL https://get.rvm.io | bash -s stable 
-RUN chsh -s /bin/bash
-RUN source /usr/local/rvm/scripts/rvm
+RUN /bin/bash /usr/local/rvm/scripts/rvm
+#RUN source /usr/local/rvm/scripts/rvm
 RUN rvm install 2.1.0
 
 #RUN ./usr/local/rvm/scripts/rvm
