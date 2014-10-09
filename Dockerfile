@@ -1,4 +1,4 @@
-FROM resin/rpi-buildstep-armv6hf:latest
+FROM resin/rpi-raspbian:jessie
 
 RUN apt-get update
 RUN apt-get -y upgrade
