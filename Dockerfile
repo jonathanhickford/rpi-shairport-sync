@@ -18,7 +18,7 @@ RUN apt-get update
 
 #RUN ./usr/local/rvm/scripts/rvm
 
-RUN apt-get install git-core
+RUN apt-get install -y git-core
 RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 RUN echo 'eval "$(rbenv init -)"' >> ~/.bashrc
