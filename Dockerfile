@@ -10,10 +10,10 @@ RUN /bin/bash -l -c "rvm install 2.1.0"
 #RUN ./ /usr/local/rvm/scripts/rvm
 #RUN rvm install 2.1.0
 
-RUN /bin/bash -l -c "source /usr/local/rvm/scripts/rvm"
+#RUN /bin/bash -l -c "source /usr/local/rvm/scripts/rvm"
 
 ADD . /App
 
-RUN echo /bin/bash -l -c "ruby /App/helloworld.rb" >/start
+RUN echo /usr/local/rvm/bin/rvm ruby /App/helloworld.rb >/start
 RUN chmod +x /start
  
