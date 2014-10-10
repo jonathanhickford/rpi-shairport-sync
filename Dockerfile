@@ -14,6 +14,6 @@ RUN /bin/bash -l -c "rvm install 2.1.0"
 
 ADD . /App
 
-RUN echo /usr/local/rvm/bin/rvm ruby /App/helloworld.rb >/start
+RUN echo /usr/local/rvm/bin/rvm all do ruby /App/helloworld.rb >/start
 RUN chmod +x /start
  
