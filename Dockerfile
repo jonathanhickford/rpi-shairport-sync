@@ -1,6 +1,6 @@
 FROM resin/rpi-raspbian:latest
 
-RUN apt-get update
+RUN apt-get update -q
 #RUN apt-get -y upgrade
 #RUN apt-get install -y --fix-missing git curl zlib1g-dev subversion
 #RUN apt-get update
