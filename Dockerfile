@@ -1,35 +1,25 @@
-FROM resin/rpi-raspbian:wheezy
+FROM resin/rpi-raspbian:latest
 
-#RUN apt-get -y install python-software-properties
-RUN apt-get -y update
- 
-# install essentials
-RUN apt-get -y install build-essential
-RUN apt-get install -y -q git
- 
-RUN add-apt-repository -y ppa:chris-lea/nginx-devel
-RUN apt-get install -y -q nginx-full
- 
-# Install rbenv
-RUN git clone https://github.com/sstephenson/rbenv.git /usr/local/rbenv
-RUN echo '# rbenv setup' > /etc/profile.d/rbenv.sh
-RUN echo 'export RBENV_ROOT=/usr/local/rbenv' >> /etc/profile.d/rbenv.sh
-RUN echo 'export PATH="$RBENV_ROOT/bin:$PATH"' >> /etc/profile.d/rbenv.sh
-RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
-RUN chmod +x /etc/profile.d/rbenv.sh
- 
-# install ruby-build
-RUN mkdir /usr/local/rbenv/plugins
-RUN git clone https://github.com/sstephenson/ruby-build.git /usr/local/rbenv/plugins/ruby-build
- 
-ENV RBENV_ROOT /usr/local/rbenv
- 
-ENV PATH "$RBENV_ROOT/bin:$RBENV_ROOT/shims:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-# does not work. PATH is set to
-# $RBENV_ROOT/shims:$RBENV_ROOT/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
- 
-# install ruby2
-RUN rbenv install 2.1.0
+RUN apt-get update
+#RUN apt-get -y upgrade
+#RUN apt-get install -y --fix-missing git curl zlib1g-dev subversion
+#RUN apt-get update
+
+#RUN apt-get install -y openssl libreadline6-dev git-core zlib1g libssl-dev
+#RUN apt-get install -y libyaml-dev libsqlite3-dev sqlite3
+#RUN apt-get install -y libxml2-dev libxslt-dev
+#RUN apt-get install -y autoconf automake libtool bison
+
+#RUN curl -L get.rvm.io | bash -s stable --rails
+RUN apt=get install -qy curl
+RUN \curl -sSL https://get.rvm.io | bash -s stable 
+RUN /bin/bash -l -c "rvm requirements"
+RUN /bin/bash -l -c "rvm install 2.1.0"
+#RUN chmod u+x /usr/local/rvm/scripts/rvm
+#RUN ./ /usr/local/rvm/scripts/rvm
+#RUN rvm install 2.1.0
+
+#RUN ./usr/local/rvm/scripts/rvm
 
 RUN echo ruby -v >/start
 RUN chmod +x /start
