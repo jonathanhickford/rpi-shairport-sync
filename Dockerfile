@@ -1,26 +1,19 @@
 FROM resin/rpi-raspbian:latest
 
 RUN apt-get update -q
-#RUN apt-get -y upgrade
-#RUN apt-get install -y --fix-missing git curl zlib1g-dev subversion
-#RUN apt-get update
-
-#RUN apt-get install -y openssl libreadline6-dev git-core zlib1g libssl-dev
-#RUN apt-get install -y libyaml-dev libsqlite3-dev sqlite3
-#RUN apt-get install -y libxml2-dev libxslt-dev
-#RUN apt-get install -y autoconf automake libtool bison
-
-#RUN curl -L get.rvm.io | bash -s stable --rails
 RUN apt-get install -qy curl
 RUN \curl -sSL https://get.rvm.io | bash -s stable 
 RUN /bin/bash -l -c "rvm requirements"
 RUN /bin/bash -l -c "rvm install 2.1.0"
+
 #RUN chmod u+x /usr/local/rvm/scripts/rvm
 #RUN ./ /usr/local/rvm/scripts/rvm
 #RUN rvm install 2.1.0
 
 RUN /bin/bash -l -c "source /usr/local/rvm/scripts/rvm"
 
-RUN echo ruby -v >/start
+ADD . /App
+
+RUN echo /bin/bash -l -c "ruby /App/helloworld.rb" >/start
 RUN chmod +x /start
  
