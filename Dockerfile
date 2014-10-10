@@ -19,7 +19,7 @@ RUN /bin/bash -l -c "rvm install 2.1.0"
 #RUN ./ /usr/local/rvm/scripts/rvm
 #RUN rvm install 2.1.0
 
-#RUN ./usr/local/rvm/scripts/rvm
+RUN /bin/bash -l -c "source /usr/local/rvm/scripts/rvm"
 
 RUN echo ruby -v >/start
 RUN chmod +x /start
