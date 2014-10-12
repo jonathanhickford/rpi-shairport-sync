@@ -8,5 +8,5 @@ class SaySomething
 	end
 end
 
-hello = SaySomething.new("World")
+hello = SaySomething.new("Resin")
 hello.sayHello
