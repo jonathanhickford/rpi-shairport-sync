@@ -21,8 +21,6 @@ The recipe for this project is as follows:
 1. Start a new applicaton on Resin.io, name it as you want, download the .zip file, format the SD card in FAT32 and extract it to your SD card. 
 1. Insert the SD card into the Raspberry Pi, connect the ethernet cable and power it up using the micro-usb cable.
 1. After about 10 minutes your new device should show up on the resin.io applications dashboard.
-1. Deploy an empty application. 
-
 1. You can now clone the Hello Ruby repo:
 
 `$ git clone https://github.com/nghiant2710/Hello-Ruby.git`
