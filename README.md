@@ -12,14 +12,14 @@ You can build and deploy your code on the Raspberry Pi. Other versions of Ruby a
 ## Parts
 
 The recipe for this project is as follows:
-* Raspberry Pi with ethernet cable for internet connectivity and USB -> micro USB cable for power.
+* Raspberry Pi and USB -> micro USB cable for power.
 * Ruby source file
 
 ## Resin.io Setup & Deployment
 
 1. If you haven't got a [Resin.io](http://resin.io) alpha account, visit [alpha.resin.io](http://alpha.resin.io) and sign up.
 1. Start a new applicaton on Resin.io, name it as you want, download the .zip file, format the SD card in FAT32 and extract it to your SD card. 
-1. Insert the SD card into the Raspberry Pi, connect the ethernet cable and power it up using the micro-usb cable.
+1. Insert the SD card into the Raspberry Pi, power it up using the micro-usb cable and connect it to the internet.
 1. After about 10 minutes your new device should show up on the resin.io applications dashboard.
 1. You can now clone the Hello Ruby repo:
 
