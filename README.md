@@ -1,4 +1,4 @@
-#A barebones resin.io project to demonstrate running Ruby code
+#Hello Ruby in Resin.io
 
 
 ##Notice:
