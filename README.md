@@ -1,7 +1,7 @@
 #Hello Ruby in Resin.io
 
 
-##Notice:
+## Introduction
 
 This project installs Ruby version 2.1.0 which allows you to execute Ruby applications on [Resin.io](http://resin.io).
 
