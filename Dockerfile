@@ -2,15 +2,14 @@ FROM resin/rpi-raspbian:latest
 
 RUN apt-get update
 
-#RUN apt-get install -qy curl
-#RUN \curl -sSL https://get.rvm.io | bash -s stable 
-#RUN /bin/bash -l -c "rvm install 2.1.0"
 
-RUN apt-get install -y ruby
+RUN apt-get install -y git libao-dev libssl-dev libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libmodule-build-perl libasound2-dev libpulse-dev
+
+
 
 ADD . /App
 
-#RUN echo /usr/local/rvm/bin/rvm all do ruby /App/helloworld.rb >/start
-RUN echo 'ruby /App/helloworld.rb' >/start
+RUN sh /App/perl-net-sdp.sh
+RUN cp /App/start /start
 RUN chmod +x /start
  
