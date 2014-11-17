@@ -1,5 +1,5 @@
-#FROM resin/rpi-raspbian:latest
-FROM ubuntu
+FROM resin/rpi-raspbian:latest
+#FROM ubuntu
 
 RUN apt-get update && apt-get install -y \
 git \
@@ -29,5 +29,5 @@ EXPOSE 5353
 
 COPY start /start
 RUN chmod +x /start
-CMD ["sh", "/start"]
+#CMD ["sh", "/start"]
  
