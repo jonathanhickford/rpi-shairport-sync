@@ -1,15 +1,33 @@
-FROM resin/rpi-raspbian:latest
+#FROM resin/rpi-raspbian:latest
+FROM ubuntu
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y \
+git \
+autoconf \
+libtool \
+libdaemon-dev \ 
+libasound2-dev \
+libpopt-dev \
+dbus \
+avahi-daemon \
+libavahi-client-dev \
+libssl-dev \
+build-essential \
+supervisor 
 
 
-RUN apt-get install -y git libao-dev libssl-dev libcrypt-openssl-rsa-perl libio-socket-inet6-perl libwww-perl avahi-utils libmodule-build-perl libasound2-dev libpulse-dev
+RUN mkdir -p \
+/var/log/supervisor \
+/var/run/dbus
 
+COPY shairport.sh /tmp/
+RUN sh /tmp/shairport.sh
 
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-ADD . /App
+EXPOSE 5353
 
-RUN sh /App/perl-net-sdp.sh
-RUN cp /App/start /start
+COPY start /start
 RUN chmod +x /start
+CMD ["sh", "/start"]
  

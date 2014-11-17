@@ -1,1 +1,1 @@
-echo 'starting'
+/usr/bin/supervisord

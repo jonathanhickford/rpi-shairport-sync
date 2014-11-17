@@ -1,12 +1,6 @@
-git clone https://github.com/abrasive/shairport.git
-cd shairport
-./configure
+git clone https://github.com/mikebrady/shairport-sync.git
+cd shairport-sync
+autoreconf -i -f
+./configure --with-alsa --with-avahi --with-ssl=openssl
 make
 make install
-
-
-cp scripts/debian/init.d/shairport /etc/init.d/shairport
-cd /etc/init.d
-chmod a+x shairport
-update-rc.d shairport defaults
-sudo useradd -g audio shairport
