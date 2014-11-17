@@ -12,6 +12,7 @@ dbus \
 avahi-daemon \
 libavahi-client-dev \
 libssl-dev \
+libgpg-error \
 build-essential \
 supervisor 
 
