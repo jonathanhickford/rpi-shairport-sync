@@ -1,1 +1,1 @@
-/usr/bin/supervisord -n
+/usr/bin/supervisord
