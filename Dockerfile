@@ -29,6 +29,7 @@ RUN cd shairport-sync && autoreconf -i -f && ./configure --with-alsa --with-avah
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 COPY start /start
+
 RUN chmod +x /start
 #CMD ["sh", "/start"]
  
