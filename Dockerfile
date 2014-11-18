@@ -23,14 +23,9 @@ RUN mkdir -p \
 /var/run/dbus
 
 RUN git clone https://github.com/mikebrady/shairport-sync.git
-RUN shairport-sync/autoreconf -i -f
-RUN shairport-sync/configure --with-alsa --with-avahi --with-ssl=openssl
-RUN shairport-sync/make
-RUN shairport-sync/make install
+RUN cd shairport-sync && autoreconf -i -f && ./configure --with-alsa --with-avahi --with-ssl=openssl && make && make install
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
-EXPOSE 5353
 
 COPY start /start
 RUN chmod +x /start
