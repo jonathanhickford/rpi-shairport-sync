@@ -8,6 +8,7 @@ dbus \
 git \
 libasound2-dev \
 libavahi-client-dev \
+libdaemon \
 libgpg-error0 \
 libpopt-dev \
 libssl-dev \
