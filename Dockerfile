@@ -9,6 +9,7 @@ git \
 libasound2-dev \
 libavahi-client-dev \
 libdaemon0 \
+libdaemon-dev \
 libgpg-error0 \
 libpopt-dev \
 libssl-dev \
