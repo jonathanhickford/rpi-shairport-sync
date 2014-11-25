@@ -1,5 +1,5 @@
 .git
 .gitignore
-shairport.sublime-project
-shairport.sublime-workspace
+*.sublime-project
+*.sublime-workspace
 README.md

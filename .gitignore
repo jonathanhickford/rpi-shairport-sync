@@ -7,5 +7,5 @@
 # Folders
 node_modules
 
-shairport.sublime-project
-shairport.sublime-workspace
+*.sublime-project
+*.sublime-workspace
